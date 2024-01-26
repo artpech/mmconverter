@@ -24,7 +24,8 @@ def tryeval(val):
 if uploaded_file:
 
     bytes_data = uploaded_file.getvalue()
-    stringio = StringIO(bytes_data.decode("ANSI"))
+    # stringio = StringIO(bytes_data.decode("ANSI"))
+    stringio = StringIO(bytes_data.decode("latin-1"))
     string_data = stringio.read()
     rows = string_data.replace('"', '').split("\r")
     rows = [row.split(";") for row in rows]
